@@ -7,13 +7,13 @@ With Google Cloud Directory Sync (GCDS), you can synchronize the data in your Go
 
 This module will build a Linux server and install the GCDS configuration tool. This tool is a JAVA application so it requires a desktop and a JDK. This avoids the need to use a Windows desktop or server.
 
-It will start a VNCSERVER and you can connect to it using VNCVIEWER 
+It will start a VNCSERVER and you can connect to it using VNCVIEWER on port 5901
 
 The 'Configuration Manager' can then be found in the desktop menu under OTHER -> Configuration Manager.
 
 ## WHAT THIS MODULE DOES NOT DO
 
-This module does not do any network configuratio, you will be responsible for setting up firewall rules to permit tcp-5901 from you desktop source IP. 
+This module does not do any network configuration, you will be responsible for setting up firewall rules to permit tcp-5901 from your desktop source IP. 
 
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

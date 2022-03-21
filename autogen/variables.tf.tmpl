@@ -11,28 +11,33 @@ variable "zone" {
   type        = string
 }
 variable "network" {
-  description = "The network to deploy to"
+  description = "The network to deploy to, if not specified 'default' will be used"
   type        = string
+  default     = "default"
 }
 variable "instance_name" {
   description = "The name of the instance, 'gcds' will be used if not set"
   type        = string
   default     = "gcds"
 }
-variable "public" {
-  description = "Assign a public ip, true=yes, false=no"
-  type        = bool
-}
-variable "access_config" {
-  description = "Access configs for network, nat_ip and DNS"
-  type = list(object({
-    network_tier           = string
-    nat_ip                 = string
-    public_ptr_domain_name = string
-  }))
-  default = [{
-    nat_ip                 = "",
-    network_tier           = "PREMIUM",
-    public_ptr_domain_name = ""
-  }]
-}
+
+
+# The following is yet to be implemented
+#
+#variable "public" {
+#  description = "Assign a public ip, true=yes, false=no"
+#  type        = bool
+#}
+#variable "access_config" {
+#  description = "Access configs for network, nat_ip and DNS"
+#  type = list(object({
+#    network_tier           = string
+#    nat_ip                 = string
+#    public_ptr_domain_name = string
+#  }))
+#  default = [{
+#    nat_ip                 = "",
+#    network_tier           = "PREMIUM",
+#    public_ptr_domain_name = ""
+#  }]
+#}
