@@ -9,10 +9,11 @@ This module will build a Linux server and install the GCDS configuration tool. T
 
 It will start a VNCSERVER and you can connect to it using VNCVIEWER 
 
+The 'Configuration Manager' can then be found in the desktop menu under OTHER -> Configuration Manager.
 
 ## WHAT THIS MODULE DOES NOT DO
 
-This module does not do any network configuratio, you will be resonsible for setting up firewall rules to permit tcp-5901 from you desktop source IP. 
+This module does not do any network configuratio, you will be responsible for setting up firewall rules to permit tcp-5901 from you desktop source IP. 
 
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
