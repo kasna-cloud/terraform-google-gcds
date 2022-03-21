@@ -3,6 +3,11 @@
 ## WHAT THE MODULE DOES
 
 
+
+
+The 'Configuration Manager' can then be found in the desktop menu under OTHER -> Configuration Manager.
+
+
 ## WHAT THIS MODULE DOES NOT DO
 
 
