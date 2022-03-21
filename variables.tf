@@ -20,24 +20,3 @@ variable "instance_name" {
   type        = string
   default     = "gcds"
 }
-
-
-# The following is yet to be implemented
-#
-#variable "public" {
-#  description = "Assign a public ip, true=yes, false=no"
-#  type        = bool
-#}
-#variable "access_config" {
-#  description = "Access configs for network, nat_ip and DNS"
-#  type = list(object({
-#    network_tier           = string
-#    nat_ip                 = string
-#    public_ptr_domain_name = string
-#  }))
-#  default = [{
-#    nat_ip                 = "",
-#    network_tier           = "PREMIUM",
-#    public_ptr_domain_name = ""
-#  }]
-#}
