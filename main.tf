@@ -48,6 +48,7 @@ chmod +x dirsync-linux64.sh
 apt autoremove -y
 apt -yq clean
 echo "${local.xstartup}" > /root/.vnc/xstartup
+vncserver
   EOF
 }
 
