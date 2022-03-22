@@ -11,9 +11,13 @@ It will start a VNCSERVER and you can connect to it using VNCVIEWER on port 5901
 
 The 'Configuration Manager' can then be found in the desktop menu under OTHER -> Configuration Manager.
 
+After the first installation of the VM it will take some time for VNC to become avaliable since there are many packages that need to install. Once this has completed ssh to your instance and run 'vncserver' as root, this will prompt you to enter a password, this needs to be done only once. Reboot and the VNCSERVER will start automatically in future.
+
 ## WHAT THIS MODULE DOES NOT DO
 
-This module does not do any network configuration, you will be responsible for setting up firewall rules to permit tcp-5901 from your desktop source IP. 
+This module does not do any network configuration, you will be responsible for setting up firewall rules to permit tcp-5901 from your desktop source IP. A network tag of 'vnc is created on the VM so you can use this as a target in you firewall rules.
+
+This module will also not set up the active directory or the actual configuration of the directory sync tool. You will need to do this manually.
 
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

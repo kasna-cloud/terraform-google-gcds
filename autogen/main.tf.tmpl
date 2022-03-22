@@ -39,16 +39,19 @@ apt update
 apt -yq upgrade
 DEBIAN_FRONTEND=noninteractive apt -yq install vim openjdk-8-jdk xorg lxde-core lxterminal tightvncserver libxext6 libxi6 libxrender1 libxtst6 python3 python3-ldap wget
 dpkg --force-all -P openjdk-17-jre:amd64 openjdk-17-jre-headless:amd64 openjdk-17-jre openjdk-17-jre-headless
-mkdir /gcsd
-cd /gcsd
+[ ! -d "/gcds" ] && mkdir /gcds
+cd /gcds
 echo "${local.gcds_var}" > gcds.varfile
 wget https://dl.google.com/dirsync/dirsync-linux64.sh
 chmod +x dirsync-linux64.sh
 ./dirsync-linux64.sh -q
+[ -f "dirsync-linux64.sh" ] && rm dirsync-linux64.sh
 apt autoremove -y
 apt -yq clean
+[ ! -d "/root/.vnc" ] && mkdir /root/.vnc
 echo "${local.xstartup}" > /root/.vnc/xstartup
-vncserver
+chmod +x /root/.vnc/xstartup
+[ -f "/root/.vnc/passwd" ] && su - -c "/usr/bin/vncserver"
   EOF
 }
 
@@ -90,19 +93,4 @@ resource "google_compute_instance" "gcds" {
     email  = google_service_account.gcds_sa.email
     scopes = ["cloud-platform"]
   }
-}
-
-
-# Firewall Rules
-resource "google_compute_firewall" "vnc" {
-  name    = "vnc"
-  network = var.network
-  project = var.project_id
-
-  allow {
-    protocol = "tcp"
-    ports    = ["5901"]
-  }
-
-  target_tags = ["vnc"]
 }
